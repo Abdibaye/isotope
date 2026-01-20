@@ -23,7 +23,7 @@ export function Navbar() {
                             priority
                         />
                         <div className="flex flex-col leading-none">
-                            <span className="text-lg font-semibold text-white">Isotope</span>
+                            <span className="text-lg font-semibold text-white">Isotop</span>
                         </div>
                     </Link>
 
