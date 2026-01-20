@@ -1,26 +1,129 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* @theme {
+  --color-background: #000000;
+  --color-foreground: #ededed;
+  
+  --color-primary: #5100fd;
+  --color-primary-foreground: #ffffff;
+  
+  --color-zinc-400: #a1a1aa;
+  --color-zinc-700: #3f3f46;
+  --color-zinc-800: #27272a;
+  --color-zinc-900: #18181b;
+  --color-zinc-950: #09090b;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  --animate-line-race: line-race 3s linear infinite;
+  --animate-fade-in: fade-in 1s ease-out forwards;
+  --animate-fade-in-up: fade-in-up 1s ease-out forwards;
+
+  @keyframes line-race {
+    0% {
+      stroke-dashoffset: 0;
+    }
+    100% {
+      stroke-dashoffset: -3000px;
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+} */
+
+/* Custom Utilities */
+/* @utility glow-border {
+  position: relative;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@utility glow-border::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(to bottom right, rgba(81, 0, 253, 0.5), rgba(255, 255, 255, 0.1));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+} */
+
+:root {
+  --background: #0d1117;
+  --foreground: #e6edf3;
+
+  --card: #161b22;
+  --card-foreground: #e6edf3;
+
+  --popover: #161b22;
+  --popover-foreground: #e6edf3;
+
+  --primary: #5100fd;
+  --primary-foreground: #ffffff;
+
+  --secondary: #21262d;
+  --secondary-foreground: #e6edf3;
+
+  --muted: #161b22;
+  --muted-foreground: #8b949e;
+
+  --accent: #21262d;
+  --accent-foreground: #e6edf3;
+
+  --destructive: #da3633;
+  --destructive-foreground: #ffffff;
+
+  --border: #30363d;
+  --input: #30363d;
+  --ring: #5100fd;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), sans-serif;
+  overflow-x: hidden;
+}
+
+/* Lenis Smooth Scroll */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
 }
