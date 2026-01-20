@@ -24,7 +24,6 @@ export function Navbar() {
                         />
                         <div className="flex flex-col leading-none">
                             <span className="text-lg font-semibold text-white">Isotope</span>
-                            <span className="text-[11px] uppercase tracking-[0.3em] text-white/40">Auto-save for code</span>
                         </div>
                     </Link>
 
